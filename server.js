@@ -9,12 +9,10 @@ const image = require('./controllers/image')
 const port = process.env.PORT || 3000
 const db = knex({
     client: 'pg',
-    connection: {
-      host : 'postgres://odvumnsh:p6Rr8WOU-jiBkTjhxAwABCqhMEVH-B5w@tiny.db.elephantsql.com/odvumnsh',
-      user : 'odvumnsh',
-      password : 'p6Rr8WOU-jiBkTjhxAwABCqhMEVH-B5w',
-      database : 'Smart-brain'
-    }
+    connection: "postgres://odvumnsh:p6Rr8WOU-jiBkTjhxAwABCqhMEVH-B5w@tiny.db.elephantsql.com/odvumnsh",
+    searchPath:['knex','public'],
+      
+    
   });
 
 db.select('*').from('users').then(data=>{
