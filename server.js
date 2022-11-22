@@ -10,9 +10,9 @@ const port = process.env.PORT || 3000
 const db = knex({
     client: 'pg',
     connection: {
-      host : '127.0.0.1',
-      user : 'postgres',
-      password : 'test',
+      host : 'postgres://odvumnsh:p6Rr8WOU-jiBkTjhxAwABCqhMEVH-B5w@tiny.db.elephantsql.com/odvumnsh',
+      user : 'odvumnsh',
+      password : 'p6Rr8WOU-jiBkTjhxAwABCqhMEVH-B5w',
       database : 'smart-brain'
     }
   });
