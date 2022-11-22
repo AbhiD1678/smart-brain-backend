@@ -13,7 +13,7 @@ const db = knex({
       host : 'postgres://odvumnsh:p6Rr8WOU-jiBkTjhxAwABCqhMEVH-B5w@tiny.db.elephantsql.com/odvumnsh',
       user : 'odvumnsh',
       password : 'p6Rr8WOU-jiBkTjhxAwABCqhMEVH-B5w',
-      database : 'smart-brain'
+      database : 'Smart-brain'
     }
   });
 
