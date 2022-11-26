@@ -9,9 +9,7 @@ const image = require('./controllers/image')
 const port = process.env.PORT || 3000
 const db = knex({
     client: 'pg',
-//     connection: "postgres://odvumnsh:p6Rr8WOU-jiBkTjhxAwABCqhMEVH-B5w@tiny.db.elephantsql.com/odvumnsh",
-    connection: process.env.PG_CONNECTION_STRING,
-
+    connection: "postgres://odvumnsh:p6Rr8WOU-jiBkTjhxAwABCqhMEVH-B5w@tiny.db.elephantsql.com/odvumnsh"
     searchPath:['knex','public'],
       
     
@@ -27,13 +25,13 @@ app.use(express.json());
 app.use(cors());
 
 
-app.get('/',(req,res)=>{res.send('it is working!!')});
+app.get('/',cors(),(req,res)=>{res.send('it is working!!')});
 
-app.post('/signin',(req,res)=>{signin.handleSignin(req,res,db,bcrypt)});
+app.post('/signin',cors(),(req,res)=>{signin.handleSignin(req,res,db,bcrypt)});
 
-app.post('/register',(req,res)=>{register.handleRegister(req,res,db,bcrypt)});
+app.post('/register',cors(),(req,res)=>{register.handleRegister(req,res,db,bcrypt)});
 
-app.get('/profile/:id',(req,res)=>{profile.handleProfile(req,res,db,bcrypt)});
+app.get('/profile/:id',cors(),(req,res)=>{profile.handleProfile(req,res,db,bcrypt)});
 //     database.users.forEach(user=>{
 //         if (user.id ===id){
 //             found=true;
@@ -44,8 +42,8 @@ app.get('/profile/:id',(req,res)=>{profile.handleProfile(req,res,db,bcrypt)});
 //         res.status(400).json('no user found')
 //     }
 // })
-app.put('/image',(req,res)=>{ image.handleImg(req,res,db ) });
-app.post('/imageurl',(req,res)=>{image.handleApiCall(req,res,db)});
+app.put('/image',cors(),(req,res)=>{ image.handleImg(req,res,db ) });
+app.post('/imageurl',cors(),(req,res)=>{image.handleApiCall(req,res,db)});
 // bcrypt.hash("bacon", null, null, function(err, hash) {
 //     // Store hash in your password DB.
 // });
