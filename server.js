@@ -9,7 +9,9 @@ const image = require('./controllers/image')
 const port = process.env.PORT || 3000
 const db = knex({
     client: 'pg',
-    connection: "postgres://odvumnsh:p6Rr8WOU-jiBkTjhxAwABCqhMEVH-B5w@tiny.db.elephantsql.com/odvumnsh",
+//     connection: "postgres://odvumnsh:p6Rr8WOU-jiBkTjhxAwABCqhMEVH-B5w@tiny.db.elephantsql.com/odvumnsh",
+    connection: process.env.PG_CONNECTION_STRING,
+
     searchPath:['knex','public'],
       
     
