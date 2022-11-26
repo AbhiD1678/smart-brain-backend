@@ -22,16 +22,16 @@ db.select('*').from('users').then(data=>{
 const app = express();
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 
 
-app.get('/',(req,res)=>{res.send('it is working!!')})
+app.get('/',(req,res)=>{res.send('it is working!!')});
 
-app.post('/signin',(req,res)=>{signin.handleSignin(req,res,db,bcrypt)})
+app.post('/signin',(req,res)=>{signin.handleSignin(req,res,db,bcrypt)});
 
-app.post('/register',(req,res)=>{register.handleRegister(req,res,db,bcrypt)})
+app.post('/register',(req,res)=>{register.handleRegister(req,res,db,bcrypt)});
 
-app.get('/profile/:id',(req,res)=>{profile.handleProfile(req,res,db,bcrypt)})
+app.get('/profile/:id',(req,res)=>{profile.handleProfile(req,res,db,bcrypt)});
 //     database.users.forEach(user=>{
 //         if (user.id ===id){
 //             found=true;
@@ -42,8 +42,8 @@ app.get('/profile/:id',(req,res)=>{profile.handleProfile(req,res,db,bcrypt)})
 //         res.status(400).json('no user found')
 //     }
 // })
-app.put('/image',(req,res)=>{ image.handleImg(req,res,db ) })
-app.post('/imageurl',(req,res)=>{image.handleApiCall(req,res,db)})
+app.put('/image',(req,res)=>{ image.handleImg(req,res,db ) });
+app.post('/imageurl',(req,res)=>{image.handleApiCall(req,res,db)});
 // bcrypt.hash("bacon", null, null, function(err, hash) {
 //     // Store hash in your password DB.
 // });
