@@ -21,7 +21,7 @@ const app = express();
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(cors());
-app.use('Access-Control-Allow-Origin':'*');
+
 
 
 app.get('/',cors(),(req,res)=>{res.send('it is working!!')});
