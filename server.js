@@ -21,13 +21,15 @@ const app = express();
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(cors());
-app.get('/',(req,res)=>{res.send('it is working')});
+app.get('/',(req,res)=>{
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send({ "msg": "This has CORS enabled 🎈" })});
 
 
-app.get('/cors', (req, res) => {
-res.set('Access-Control-Allow-Origin', '*');
-res.send({ "msg": "This has CORS enabled 🎈" })
-})
+// app.get('/cors', (req, res) => {
+// res.set('Access-Control-Allow-Origin', '*');
+// res.send({ "msg": "This has CORS enabled 🎈" })
+// })
 
 app.post('/signin',cors(),(req,res)=>{signin.handleSignin(req,res,db,bcrypt)});
 
