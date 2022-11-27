@@ -24,11 +24,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(cors());
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  next();
-  });
+Access-Control-Allow-Origin: *
 
 
 app.get('/',cors(),(req,res)=>{res.send('it is working!!')});
