@@ -24,7 +24,7 @@ const handleRegister=(req,res,db,bcrypt)=>{
                     res.json(user[0]);
         })
             }).then(trx.commit)
-            .then(trx.rollback)
+            .catch(trx.rollback)
         })
     
         
