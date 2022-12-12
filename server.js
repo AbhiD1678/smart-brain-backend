@@ -9,7 +9,7 @@ const image = require('./controllers/image')
 const port = process.env.PORT || 3000
 const db = knex({
     client: 'pg',
-    connection: "db.optfbzmjjzzfgrmrmttw.supabase.co",
+    connection: "https://erin-friendly-sawfish.cyclic.app/",
     searchPath:['knex','public'],
       
     
