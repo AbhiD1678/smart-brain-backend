@@ -9,7 +9,7 @@ const image = require('./controllers/image')
 const port = process.env.PORT || 3000
 const db = knex({
     client: 'pg',
-    connection: "postgresql://postgres:[YOUR-PASSWORD]@db.optfbzmjjzzfgrmrmttw.supabase.co:5432/postgres",
+    connection: "db.optfbzmjjzzfgrmrmttw.supabase.co",
     searchPath:['knex','public'],
       
     
